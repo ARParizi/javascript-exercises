@@ -1,8 +1,12 @@
-const removeFromArray = function(arr, deleteValue) {
+const removeFromArray = function(arr, ...deleteValue) {
     const ans = [];
-    for (let i = 0; i < arr.length; i++) {
-        if (arr[i] != deleteValue)
-            ans.push(arr[i]);
+    console.log(deleteValue);
+    for (let i = 0; i < arr.length; i++)
+    {
+        ans.push(arr[i]);
+        for (let j = 0; j < deleteValue.length; j++)
+            if (arr[i] === deleteValue[j])
+                ans.pop();
     }
     return ans;
 };
